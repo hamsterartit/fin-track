@@ -34,8 +34,8 @@ export const Profile = () => {
             </div>
         );
     }
-    if (isError)
-        return <div className="text-rose-600 dark:text-rose-400">Error: {error.message}</div>;
+    if (isError || !user)
+        return <div className="text-rose-600 dark:text-rose-400">Error: {error ? error.message : 'No user found'}</div>;
 
     const avatar:string = getInitials(user.name);
 
