@@ -2,10 +2,14 @@
 import { Route, Routes, } from "react-router-dom";
 import './App.scss'
 import {Overview, Settings, Sidebar, Transactions} from "./views";
+import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
 
   return (
+      <QueryClientProvider client={queryClient}>
       <div className="flex h-screen bg-zinc-50 text-zinc-900">
         <Sidebar/>
 
@@ -23,6 +27,7 @@ function App() {
               </Routes>
           </main>
       </div>
+      </QueryClientProvider>
   )
 }
 

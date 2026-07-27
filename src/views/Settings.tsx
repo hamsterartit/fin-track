@@ -1,3 +1,7 @@
+import {Profile} from "../components";
+
 export const Settings = () => {
-    return <div>Settings</div>
+    return <>
+    <Profile/>
+    </>
 }

@@ -1,0 +1,9 @@
+{
+  "user": {
+    "id": "u1",
+    "name": "John Doe",
+    "email": "john@doe.com",
+    "currency": "GBP",
+    "balance": 15000
+  }
+}

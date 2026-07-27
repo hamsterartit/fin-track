@@ -1,0 +1,11 @@
+import type {User} from "../types";
+
+const API_URL = "http://localhost:3001";
+
+export async function getUser(): Promise<User> {
+    const response = await fetch(`${API_URL}/user`);
+
+    if (!response.ok) throw new Error(`"Load user failed": ${response.status}`);
+
+    return await response.json();
+}
