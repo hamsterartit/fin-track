@@ -1,9 +1,29 @@
 import {useCurrentUserData} from "../hooks/useCurrentUserData.ts";
 import {CURRENCY} from "../constants";
 import {getInitials} from "../utils";
+import {updateUser} from "../services/api.ts";
+import {useMutation} from "@tanstack/react-query";
+import type {ChangeEvent} from "react";
 
 export const Profile = () => {
     const {data: user, error, isError, isLoading} = useCurrentUserData();
+
+    const currencyMutation = useMutation({
+        mutationFn: (currency: string) => {
+            return updateUser({ currency });
+        },
+        onSuccess: () => {
+            console.log("Currency updated", "success");
+        },
+        onError: (error: Error) => {
+            console.log(error.message ?? "Update failed", "error");
+        },
+    });
+
+    const onCurrencyChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        event.preventDefault();
+        currencyMutation.mutate(event.target.value);
+    };
 
 
     if (isLoading) {
@@ -72,6 +92,7 @@ export const Profile = () => {
                         id="profile-currency"
                         className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl text-sm text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-500 transition-all disabled:opacity-60"
                         value={user.currency}
+                        onChange={onCurrencyChange}
                     >
                         {CURRENCY.map((item) => (
                             <option key={item.shortKey} value={item.shortKey}>

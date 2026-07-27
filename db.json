@@ -3,7 +3,8 @@
     "id": "u1",
     "name": "John Doe",
     "email": "john@doe.com",
-    "currency": "GBP",
+    "currency": "USD",
     "balance": 15000
-  }
+  },
+  "$schema": "./node_modules/json-server/schema.json"
 }
