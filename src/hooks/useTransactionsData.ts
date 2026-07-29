@@ -1,14 +1,14 @@
 import {useQuery} from "@tanstack/react-query";
-import {getTransactions} from "../services/api.ts";
+import {getTransactions} from "../services/api";
+import type {CategorySummary, Transaction} from "../types";
 
-export const useTransactionsData = () => {
-    return useQuery(
-        {
-            queryKey: ["transactions"],
-            queryFn: () => {
-                return getTransactions();
-            },
-            retry: 1,
-        }
-    )
+export const useTransactionsData = (
+    selectFunction?: (data: Transaction[]) => CategorySummary[]
+) => {
+    return useQuery({
+        queryKey: ["transactions"],
+        queryFn: () => getTransactions(),
+        retry: 1,
+        select: selectFunction,
+    })
 }

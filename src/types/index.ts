@@ -22,3 +22,9 @@ export interface Transaction {
 export type ModalId =
     | "addTransactionModal"
     | "transferModal";
+
+export interface CategorySummary {
+    sum: number,
+    limit: number,
+    category: Category;
+}

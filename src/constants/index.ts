@@ -41,3 +41,12 @@ export const CATEGORIES: Category[] = [
     "electronics",
     "other",
 ];
+
+export const CATEGORY_LIMITS: Record<Category, number> = {
+    food: 600,
+    housing: 1500,
+    transport: 300,
+    entertainment: 400,
+    electronics: 1000,
+    other: 500,
+};
