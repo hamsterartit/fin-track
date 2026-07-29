@@ -1,4 +1,4 @@
-import type {User} from "../types";
+import type {Transaction, User} from "../types";
 
 const API_URL = "http://localhost:3001";
 
@@ -18,6 +18,15 @@ export async function updateUser(patch: Partial<User>): Promise<User> {
     });
 
     if (!response.ok) throw new Error(`Update user failed: ${response.status}`);
+
+    return await response.json();
+}
+
+
+export async function getTransactions(): Promise<Transaction[]> {
+    const response = await fetch(`${API_URL}/transactions`);
+
+    if (!response.ok) throw new Error(`Load transactions failed: ${response.status}`);
 
     return await response.json();
 }

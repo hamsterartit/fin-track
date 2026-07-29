@@ -1,3 +1,6 @@
+import {Car, CircleDollarSign, Home, type LucideIcon, Popcorn, Smartphone, UtensilsCrossed} from "lucide-react";
+import type {Category} from "../types";
+
 export const CURRENCY = [
     { currency: "US Dollar", shortKey: "USD" },
     { currency: "Euro", shortKey: "EUR" },
@@ -17,4 +20,13 @@ export const TAB_CONFIG: Record<string, { title: string; subtitle: string }> = {
         title: "Settings",
         subtitle: "Manage your account and preferences.",
     },
+};
+
+export const iconMap: Record<Category, LucideIcon> = {
+    food: UtensilsCrossed,
+    housing: Home,
+    transport: Car,
+    entertainment: Popcorn,
+    electronics: Smartphone,
+    other: CircleDollarSign,
 };

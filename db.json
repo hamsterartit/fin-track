@@ -3,8 +3,31 @@
     "id": "u1",
     "name": "John Doe",
     "email": "john@doe.com",
-    "currency": "GBP",
+    "currency": "USD",
     "balance": 15000
   },
+  "transactions": [
+    {
+      "name": "test",
+      "date": "2026-06-11T00:00:00.000Z",
+      "amount": 0.04,
+      "type": "income",
+      "category": "housing"
+    },
+    {
+      "name": "test2",
+      "date": "2026-06-11T00:00:00.000Z",
+      "amount": 6,
+      "type": "income",
+      "category": "transport"
+    },
+    {
+      "name": "test24",
+      "date": "2026-06-11T00:00:00.000Z",
+      "amount": 55,
+      "type": "expense",
+      "category": "electronics"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
