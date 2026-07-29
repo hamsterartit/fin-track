@@ -1,5 +1,5 @@
 import {Car, CircleDollarSign, Home, type LucideIcon, Popcorn, Smartphone, UtensilsCrossed} from "lucide-react";
-import type {Category} from "../types";
+import type {Category, Type} from "../types";
 
 export const CURRENCY = [
     { currency: "US Dollar", shortKey: "USD" },
@@ -30,3 +30,14 @@ export const iconMap: Record<Category, LucideIcon> = {
     electronics: Smartphone,
     other: CircleDollarSign,
 };
+
+export const TYPES: Type[] = ["income", "expense"];
+
+export const CATEGORIES: Category[] = [
+    "food",
+    "housing",
+    "transport",
+    "entertainment",
+    "electronics",
+    "other",
+];

@@ -30,3 +30,17 @@ export async function getTransactions(): Promise<Transaction[]> {
 
     return await response.json();
 }
+
+export const addTransaction = async (transaction: Transaction): Promise<void> => {
+    const response = await fetch(`${API_URL}/transactions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(transaction),
+    });
+
+    if (!response.ok) throw new Error("Add transaction data error");
+
+    const result = await response.json();
+    console.log("Added transaction:", result);
+    return result;
+};

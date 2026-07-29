@@ -12,21 +12,32 @@
       "date": "2026-06-11T00:00:00.000Z",
       "amount": 0.04,
       "type": "income",
-      "category": "housing"
+      "category": "housing",
+      "id": "oVPbiw-jjks"
     },
     {
       "name": "test2",
       "date": "2026-06-11T00:00:00.000Z",
       "amount": 6,
       "type": "income",
-      "category": "transport"
+      "category": "transport",
+      "id": "n8k7E2_FfN0"
     },
     {
       "name": "test24",
       "date": "2026-06-11T00:00:00.000Z",
       "amount": 55,
       "type": "expense",
-      "category": "electronics"
+      "category": "electronics",
+      "id": "Pcp2JKW_3xs"
+    },
+    {
+      "name": "1223234213",
+      "date": "2026-07-29T16:17:26.515Z",
+      "amount": "2131",
+      "type": "income",
+      "category": "food",
+      "id": "zKFlUjr2a88"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -18,3 +18,7 @@ export interface Transaction {
     type: Type | null;
     category: Category | null;
 }
+
+export type ModalId =
+    | "addTransactionModal"
+    | "transferModal";
