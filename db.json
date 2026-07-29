@@ -38,6 +38,22 @@
       "type": "income",
       "category": "food",
       "id": "zKFlUjr2a88"
+    },
+    {
+      "name": "rerer",
+      "date": "2026-07-29T16:43:35.387Z",
+      "amount": "333",
+      "type": "expense",
+      "category": "other",
+      "id": "CrGdkBz_YZ0"
+    },
+    {
+      "name": "Transfer to dewsfsfdsf",
+      "date": "2026-07-29T16:55:20.663Z",
+      "amount": "4353534",
+      "type": "expense",
+      "category": "other",
+      "id": "TT7NI8QHFYw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

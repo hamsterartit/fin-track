@@ -1,8 +1,15 @@
 import {useTransactionsData} from "../hooks/useTransactionsData.ts";
 import {formattedDate, getCategoryIcon} from "../utils";
+import type {Transaction} from "../types";
+
+const toTransactionsSort = (data: Transaction[]): Transaction[] => {
+    return [...data]
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+}
 
 export const TransactionsList = () => {
-    const {data: transactions, error, isLoading, isError} = useTransactionsData();
+    const {data: transactions, error, isLoading, isError} = useTransactionsData(toTransactionsSort);
 
     if (isLoading) {
         return (
@@ -38,7 +45,6 @@ export const TransactionsList = () => {
                     </thead>
                     <tbody className="divide-y divide-zinc-50 dark:divide-zinc-800">
                     {transactions.map((transaction) => {
-
                         const Icon = getCategoryIcon(transaction.category);
                         return (
                             <tr
